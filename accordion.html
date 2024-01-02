@@ -41,21 +41,40 @@ GREY COLOR: #343a40
     .accordion {
       width: 700px;
       margin: 100px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
-    .item {}
+    .item {
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      column-gap: 24px;
+      row-gap: 32px;
+    }
 
     .number,
     .text {
       font-size: 24px;
       font-weight: 500;
-      color: #087f5b;
+      /* color: #087f5b; */
+    }
+
+    .number {
+      color: #ced4da;
     }
 
     .icon {
       width: 24px;
       height: 24px;
       stroke: #087f5b;
+    }
+
+    .hidden-box {
+      grid-column: 2;
+      display: none;
     }
 
     .hidden-box p {
@@ -71,17 +90,99 @@ GREY COLOR: #343a40
       gap: 12px;
     }
 
-    /* .hidden-box li {
-      margin-bottom: 12px;
-    } */
+    /* OPEN STATE */
+    .open {
+      border-top: 4px solid #087f5b;
+    }
+
+    .open .hidden-box {
+      display: block;
+    }
+
+    .open .number,
+    .open .text {
+      color: #087f5b;
+    }
   </style>
 </head>
 
 <body>
   <div class="accordion">
     <div class="item">
+      <p class="number">01</p>
+      <p class="text">Where are this chairs assembled?</p>
+      <svg xmlns="http://www.w3.org/2000/svg"
+           fill="none"
+           viewBox="0 0 24 24"
+           stroke-width="1.5"
+           stroke="currentColor"
+           class="icon">
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </svg>
+      <div class="hidden-box">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet odit ex et, hic porro numquam nemo? Eum
+          suscipit
+          vitae repellat, quis magni sint saepe nostrum nulla. Placeat quo possimus sed.
+        </p>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </li>
+          <li>
+            Et id beatae exercitationem facilis deleniti
+          </li>
+          <li>
+            laborum optio quam corporis veniam temporibus repudiandae quos
+          </li>
+          <li>
+            perspiciatis ea. Quod velit eos dolorem fugit quasi.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item open">
       <p class="number">02</p>
       <p class="text">How long do I have to return my chair?</p>
+      <svg xmlns="http://www.w3.org/2000/svg"
+           fill="none"
+           viewBox="0 0 24 24"
+           stroke-width="1.5"
+           stroke="currentColor"
+           class="icon">
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </svg>
+      <div class="hidden-box">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet odit ex et, hic porro numquam nemo? Eum
+          suscipit
+          vitae repellat, quis magni sint saepe nostrum nulla. Placeat quo possimus sed.
+        </p>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </li>
+          <li>
+            Et id beatae exercitationem facilis deleniti
+          </li>
+          <li>
+            laborum optio quam corporis veniam temporibus repudiandae quos
+          </li>
+          <li>
+            perspiciatis ea. Quod velit eos dolorem fugit quasi.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <p class="number">03</p>
+      <p class="text">Do you ship to countries outside the EU?</p>
       <svg xmlns="http://www.w3.org/2000/svg"
            fill="none"
            viewBox="0 0 24 24"
